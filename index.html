@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Organisasi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Logo Organisasi</div>
+        <nav>
+            <ul>
+                <li><a href="#profil.html">Profil</a></li>
+                <li><a href="#pendaftaran">Pendaftaran Anggota</a></li>
+                <li><a href="#galeri">Galeri Kegiatan</a></li>
+                <li><a href="#berita">Berita</a></li>
+                <li><a href="#struktur">Struktur Organisasi</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="banner">
+        <img src="image/PMR.1.jpg" alt="Unit Kesehatan Sekolah">
+        <div class="banner-text">
+            <h1>Selamat Datang di Website PMR!</h1>
+        </div>
+    </section>
+
+    <main>
+        <section id="profil">
+            <h2>Profil</h2>
+            <p>Palang Merah Remaja (PMR) </p>
+            <p>Visi</p><br>
+            <p>Misi</p><br>
+        </section>
+
+        <section id="pendaftaran">
+            <h2>Pendaftaran Anggota</h2>
+            <form>
+                <label for="nama">Nama:</label>
+                <input type="text" id="nama" name="nama" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <button type="submit">Daftar</button>
+            </form>
+        </section>
+
+        <section id="galeri">
+            <h2>Galeri Kegiatan</h2>
+            <div class="galeri-foto">
+                <img src="foto1.jpg" alt="Kegiatan 1">
+                <img src="foto2.jpg" alt="Kegiatan 2">
+            </div>
+            <div class="galeri-video">
+                <video controls>
+                    <source src="video.mp4" type="video/mp4">
+                    Browser Anda tidak mendukung video.
+                </video>
+            </div>
+        </section>
+
+        <section id="berita">
+            <h2>Berita</h2>
+            <ul>
+                <li><a href="#">Berita 1</a></li>
+                <li><a href="#">Berita 2</a></li>
+            </ul>
+        </section>
+
+        <section id="struktur">
+            <h2>Struktur Organisasi</h2>
+            <p>Diagram atau daftar struktur organisasi.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Kontak: email@organisasi.com | Tel: 0123456789</p>
+        <div class="social-media">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+        </div>
+    </footer>
+</body>
+</html>

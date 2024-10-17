@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #e10600;
+    color: white;
+    padding: 30px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.banner {
+    position: relative;
+    text-align: center;
+}
+
+.banner img {
+    width: 100%; /* Atur lebar gambar sesuai kebutuhan */
+    height: auto;
+    position: relative;
+     /* Menjaga rasio aspek gambar */
+}
+
+.banner-text {
+    position: absolute;
+    top: 50%; /* Menempatkan teks di tengah vertikal */
+    left: 50%; /* Menempatkan teks di tengah horizontal */
+    transform: translate(-50%, -50%); /* Menggeser teks agar tepat di tengah */
+    color: white; /* Warna teks */
+    font-size: 2em; /* Ukuran font */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Bayangan teks untuk kontras */
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+.galeri-foto img {
+    width: 100px;
+    margin-right: 10px;
+}
+
+footer {
+    background-color: #e10600;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.social-media a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+}
