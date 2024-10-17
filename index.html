@@ -8,7 +8,9 @@
 </head>
 <body>
     <header>
-        <div class="logo">Logo Organisasi</div>
+        <div class="logo">
+            <img src="image/Logo PMR.png" alt="Logo Organisasi">
+        </div>
         <nav>
             <ul>
                 <li><a href="#profil.html">Profil</a></li>
@@ -38,11 +40,27 @@
         <section id="pendaftaran">
             <h2>Pendaftaran Anggota</h2>
             <form>
-                <label for="nama">Nama:</label>
-                <input type="text" id="nama" name="nama" required>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <button type="submit">Daftar</button>
+                <input type="text" name="nama" placeholder="Nama"><br>
+                <select name="kelas">
+                        <option value="X">X</option>
+                        <option value="XI">XI</option>
+                        <option value="XII">XII</option>
+                    </select><br>
+            <input type="number" name="nis" placeholder="NIS"><br>
+            <input type="radio" name="jeniskelamin" value="Perempuan">Perempuan
+                            <input type="radio" name="jeniskelamin" value="Laki-laki">Laki-laki<br>
+            <select name="proli">
+                    <option value="PPLG">PPLG</option>
+                    <option value="TJKT">TJKT</option>
+                    <option value="AKL">AKL</option>
+                    <option value="MPLB">MPLB</option>
+                    <option value="AP">AP</option>
+                    <option value="TE">TE</option>
+                    <option value="PM">PM</option>
+                </select><br>
+            <input type="email" name="email" placeholder="Email"><br>
+            <input type="submit" name="kirim" value="KIRIM">
+            <input type="reset" name="reset" value="RESET">
             </form>
         </section>
 
