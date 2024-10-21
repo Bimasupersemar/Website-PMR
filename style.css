@@ -28,12 +28,7 @@ nav ul li a {
     color: white;
     text-decoration: none;
 }
-.logo {
-    border-radius: 25%;
-    height: 50px;
-    width: 50px;
-    image-orientation: flip;
-}
+
 .banner {
     position: relative;
     text-align: center;
