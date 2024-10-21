@@ -30,8 +30,8 @@ nav ul li a {
 }
 .logo {
     border-radius: 25%;
-    height: 50%;
-    width: 50%;
+    height: 50px;
+    width: 50px;
 }
 .banner {
     position: relative;
