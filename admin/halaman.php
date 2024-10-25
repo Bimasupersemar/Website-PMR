@@ -1,4 +1,4 @@
-
+<?php include("inc_header.php")?>
         <?php
         $katakunci = (isset($_GET['katakunci'])) ? $_GET['katakunci'] : "";
         ?>
@@ -37,4 +37,4 @@
                 </tr>
             </tbody>
         </table>
-    
+    <?php include("inc_footer.php")?>
