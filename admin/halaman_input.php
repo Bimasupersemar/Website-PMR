@@ -1,98 +1,89 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php include("inc_header.php")?>
+<?php 
+$judul = "";
+$isi = "";
+$kutipan = "";
+$error = "";
+$sukses = "";
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Ekstrakurikuler PMR</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-</head>
+if (isset($_POST['simpan'])) {
+    $judul = $_POST['judul'];
+    $isi = $_POST['isi'];
+    $kutipan = $_POST['kutipan'];
 
-<body class="container">
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-danger">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Palang Merah Remaja</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Profil</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Visi Misi</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Sejarah</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Galeri</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Prestasi</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Struktur Organisasi</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Logout-></a>
-                        </li>
-                    </ul>
-                </div>
-                </ul>
-            </div>
-            </div>
-        </nav>
-    </header>
-    <main>
-        <?php
-        $katakunci = (isset($_GET['katakunci'])) ? $_GET['katakunci'] : "";
-        ?>
-        <h1>Profil</h1>
-        <p>
-            <a href="#.php">
-                <input type="button" class="btn btn-primary" value="Buat Halaman Baru" />
-            </a>
-        </p>
-        <form class="row g-3" method="get">
-            <div class="col-auto">
-                <input type="text" class="form-control" placeholder="Masukkan Kata Kunci" name="katakunci" value="<?php echo $katakunci ?>" />
-            </div>
-            <div class="col-auto">
-                <input type="submit" name="cari" value="Cari Tulisan" class="btn btn-secondary" />
-            </div>
-        </form>
-        <table class="table table-stripped">
-            <thead>
-                <tr>
-                    <th class="col-1">#</th>
-                    <th>Judul</th>
-                    <th>Kutipan</th>
-                    <th class="col-2">Aksi</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, at</td>
-                    <td>Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
-                    <td>
-                        <span class="badge bg-warning text-dark">Edit</span>
-                        <span class="badge bg-danger">Delete</span>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </main>
-    <footer class="bg-light">
-        <div class="text-center p-3" style="background:#121212">
-            Copyright &copy; Kelompok 3 XI RPL 2024
-        </div>
-    </footer>
-</body>
+    if ($judul == '' or $isi == '') {
+        $error = "silahkan masukan semua data"
+    }
+   
+    if (empty($error)) {
+        $sql1 = "insert into halaman(judul,kutipan,isi) values ('$judul','$kutipan','$isi')";
+        $q1 = mysqli_query($koneksi,$sql1);
+        if ($q1){
+            $sukses = "Berhasil memasukkan data";
+         } else {
+            $error = "Gagal memasukkan data"; 
+        }
+    }
+}
 
-</html>
+
+?>
+<h1>Halaman Admin input data</h1>
+<div class="mb-3 row">
+    <a href="halaman.php">Kembali ke Halaman Admin</a>
+</div>
+<?php
+if ($error)
+{
+    ?>
+    
+    <div class="alert alert-danger" role="alert">
+  <?php echo $error ?>
+</div>
+<?php
+}
+?>
+<?php
+if ($sukses)
+{
+    ?>
+    
+    <div class="alert alert-primary" role="alert">
+  <?php echo $sukses ?>
+</div>
+<?php
+}
+?>
+<form action="" method="post">
+<div class="mb-3 row">
+    <label for="judul" class="col-sm-2 col-form-label">Judul</label>
+    <div class="col-sm-10">
+    <label for="judul" class="visually-hidden">Judul</label>
+    <input type="text" class="form-control" id="judul" value="<?php echo $judul ?>" name="judul">
+  </div>
+  </div>
+<div class="mb-3 row">
+    <label for="kutipan" class="col-sm-2 col-form-label">kutipan</label>
+    <div class="col-sm-10">
+    <label for="kutipan" class="visually-hidden">Kutipan</label>
+    <input type="text" class="form-control" id="kutipan" value="<?php echo $kutipan ?>" name="kutipan">
+  </div>
+  </div>
+<div class="mb-3 row">
+    <label for="isi" class="col-sm-2 col-form-label">Isi</label>
+    <div class="col-sm-10">
+    <label for="isi" class="visually-hidden">Isi</label>
+  <textarea name="isi" class="form-control" id="summernote"><?php echo $isi ?></textarea>
+  </div>
+  </div>
+  <div class="mb-3 row">
+    <div class="col-sm-10">
+    <div class="col-sm-2">
+   <input type="submit" name="simpan" value="Simpan Data" class="btn btn-primary">
+  </div>
+  </div>
+
+  
+</form>
+</form>
+<?php include("inc_footer.php")?>
