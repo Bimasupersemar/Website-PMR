@@ -12,7 +12,7 @@ if (isset($_POST['simpan'])) {
     $kutipan = $_POST['kutipan'];
 
     if ($judul == '' or $isi == '') {
-        $error = "silahkan masukan semua data"
+        $error = "silahkan masukan semua data";
     }
    
     if (empty($error)) {
