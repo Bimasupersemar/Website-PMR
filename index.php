@@ -1,12 +1,14 @@
-<?php include_once("inc_header.php") ?>
+<?php
+include_once("inc_header.php");
+?>
 <!-- untuk home -->
 <section id="home">
-    <img src="<?php echo ambil_gambar('8') ?>" />
+    <img src="<?php echo ambil_gambar('5') ?>" />
     <div class="kolom">
-        <p class="deskripsi"><?php echo ambil_kutipan('8') ?></p>
-        <h2><?php echo ambil_judul('8') ?></h2>
-        <?php echo maximum_kata(ambil_isi('8'), 30) ?>
-        <p><a href="<?php echo buat_link_halaman('8') ?>" class="tbl-pink">Pelajari Lebih Lanjut</a></p>
+        <p class="deskripsi"><?php echo ambil_kutipan('5') ?></p>
+        <h2><?php echo ambil_judul('5') ?></h2>
+        <?php echo maximum_kata(ambil_isi('5'), 30) ?>
+        <p><a href="<?php echo buat_link_halaman('5') ?>" class="tbl-pink">Pelajari Lebih Lanjut</a></p>
     </div>
 </section>
 
@@ -14,9 +16,9 @@
 <section id="courses">
     <div class="kolom">
         <p class="deskripsi"><?php echo ambil_kutipan('9') ?></p>
-        <h2><?php echo ambil_judul('9') ?></h2>
-        <?php echo maximum_kata(ambil_isi('9'), 30) ?>
-        <p><a href="<?php echo buat_link_halaman('9') ?>" class="tbl-biru">Pelajari Lebih Lanjut</a></p>
+        <h2><?php echo ambil_judul('2') ?></h2>
+        <?php echo maximum_kata(ambil_isi('2'), 30) ?>
+        <p><a href="<?php echo buat_link_halaman('2') ?>" class="tbl-biru">Pelajari Lebih Lanjut</a></p>
     </div>
     <img src="<?php echo ambil_gambar('9') ?>" />
 </section>
